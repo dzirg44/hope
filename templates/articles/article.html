@@ -1,0 +1,54 @@
+{{define "articles/article"}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {{if .Articles}}
+            {{range .Articles}}
+            <article>
+                <h2><a href="{{.ShowArticleRoute}}">{{.PageTitle}}</a></h2>
+                <div class="row">
+                    <div class="group1 col-sm-6 col-md-6">
+                        <span class="glyphicon glyphicon-folder-open"></span> <a href="#">Signs</a>
+                        {{if .PageTags}}<span class="glyphicon glyphicon-bookmark"></span> <a href="#">Aries</a>
+                        <a href="#">Fire</a>, <a href="#">Mars</a>{{end}}
+                    </div>
+                    <div class="group2 col-sm-6 col-md-6">
+                        {{if .CommentsId}}<span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20
+                        Comments</a>
+                        {{end}}
+                        <span class="glyphicon glyphicon-time"></span> {{.CreatedAt}}
+                    </div>
+                </div>
+                <hr>
+                {{if .PageImageId}}
+                <img src="/im/{{.PageImageId}}" class="img-responsive" align="top">
+                {{end}}
+                <br/>
+                <!--<p class="lead">Welcome to my blog, некторые заметки будут на Русском, деякі нотатки на Українській and
+                    something articles on  English. </p>
+                -->
+                <p> {{.PageContent}}</p>
+                <p class="text-right">
+                    <a href="{{.ShowArticleRoute}}" class="text-right">
+                        continue reading...
+                    </a>
+                </p>
+                <hr>
+            </article>
+              {{end}}
+            {{end}}
+            <ul class="pagination pagination-sm test1">
+                {{if .Pagination.FirstPage}}<li><a href="?page={{.Pagination.FirstPage}}">&laquo;</a></li>{{end}}
+                {{if .Pagination.PrevPrevPage}}<li><a href="?page={{.Pagination.PrevPrevPage}}">{{.Pagination.PrevPrevPage}}</a></li>{{end}}
+                {{if .Pagination.PrevPage}}<li><a href="?page={{.Pagination.PrevPage}}">{{.Pagination.PrevPage}}</a></li>{{end}}
+                <li class="active"><a href="#">{{.Pagination.CurrentPage}}</a></li>
+                {{if .Pagination.NextPage}}<li><a href="?page={{.Pagination.NextPage}}">{{.Pagination.NextPage}}</a></li>{{end}}
+                {{if .Pagination.NextNextPage}}<li><a href="?page={{.Pagination.NextNextPage}}">{{.Pagination.NextNextPage}}</a></li>{{end}}
+                {{if .Pagination.LastPage}}<li><a href="?page={{.Pagination.LastPage}}">&raquo;</a></li>{{end}}
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+{{end}}

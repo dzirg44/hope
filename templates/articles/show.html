@@ -1,0 +1,60 @@
+{{define "articles/show"}}
+<div class="row">
+    <div class="col-md-8">
+        {{if .Article}}
+        <article>
+
+            <h2><a href="{{.ShowArticleRoute}}">{{.Article.PageTitle}}</a></h2>
+            <div class="row">
+                <div class="group1 col-sm-6 col-md-6">
+                    <span class="glyphicon glyphicon-folder-open"></span> <a href="#">Signs</a>
+                    <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Aries</a>
+                    <a href="#">Fire</a>, <a href="#">Mars</a>
+                </div>
+                <div class="group2 col-sm-6 col-md-6">
+                    <span class="glyphicon glyphicon-time" ></span> {{.Article.CreatedAt}}
+                </div>
+            </div>
+            <hr>
+            {{if .Article.PageImageId}}
+            <img src="/im/{{.Article.PageImageId}}" class="img-responsive" align="middle">
+            {{end}}
+            <br/>
+            <!--<p class="lead">Welcome to my blog, некторые заметки будут на Русском, деякі нотатки на Українській and
+                something articles on  English. </p>
+            -->
+            <p> {{.Article.PageContent}}</p>
+            <hr>
+            <ul class="pager">
+                <li class="previous"><a href="#">&larr; Previous</a></li>
+                <li class="next"><a href="#">Next &rarr;</a></li>
+            </ul>
+            {{if .CurrentUser}}
+            <input type="submit" class="btn btn-danger" value="Delete Post">
+            <input type="submit" class="btn btn-warning" value="Edit Post">
+            <button type="submit" formmethod="delete" formaction="/articles/{{.Article.PageGUID}}">Delete use delete</button>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#callGo").on('click', function() {
+                        $.ajax({
+                            url: "/articles/{{.Article.PageGUID}}",
+                            method: "DELETE",
+                            success: function(data) {
+                                $("#response").html(data);
+                            },
+                        });
+                    });
+                });
+            </script>
+            </head>
+            <body>
+            <button id="callGo" type="submit">Call Go Code</button>
+            <div id="response"></div>
+            </body>
+            {{end}}
+        </article>
+        {{end}}
+        <br>
+    </div>
+</div>
+{{end}}

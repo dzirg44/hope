@@ -1,0 +1,231 @@
+.navbar-custom {
+    background-color: #303030;
+    color:#ffffff;
+    border-radius:0;
+    min-height:auto;
+}
+
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+/*
+footer {
+    margin: 10px 0;
+}*/
+#comment, #comments li {
+    margin: 0;
+    padding: 0;
+}
+#comments li {
+    list-style: none;
+}
+.photo {
+    margin-bottom: 10px;
+}
+.social-buttons button {
+    margin-top: 5px;
+}
+
+.navbar-default {
+    background-color: #475762;
+    border-color: #00ad7c;
+}
+.navbar-default .navbar-brand {
+    color: #eceff4;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #fbd490;
+}
+.navbar-default .navbar-text {
+    color: #eceff4;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #eceff4;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fbd490;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #475762;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #eceff4;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #fbd490;
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fbd490;
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fbd490;
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fbd490;
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-toggle {
+    border-color: #00ad7c;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #00ad7c;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #eceff4;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #eceff4;
+}
+.navbar-default .navbar-link {
+    color: #eceff4;
+}
+.navbar-default .navbar-link:hover {
+    color: #fbd490;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #eceff4;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fbd490;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #fbd490;
+        background-color: #00ad7c;
+    }
+}
+
+
+/*--------------------
+	Footer styles
+--------------------*/
+footer{
+    /* Just like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+footer{
+    background-color: #475762;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    /*padding: 45px 50px;*/
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+footer .footer-limiter {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+footer .footer-left p{
+    color:  #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Footer links */
+
+footer p.footer-links{
+    font-size:18px;
+    font-weight: bold;
+    color:  #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+footer p.footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+}
+
+footer .footer-right{
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+}
+
+footer .footer-right a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color:  #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    footer .footer-left,
+    footer .footer-right{
+        text-align: center;
+    }
+
+    footer .footer-right{
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    footer .footer-left p.footer-links{
+        line-height: 1.8;
+    }
+}
+
+.test1 {
+    position: relative;
+    left: 50%;
+}

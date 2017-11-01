@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Bootstrap Blog">
+    <meta name="author" content="Oleg Tsim">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/css/custom.css" rel="stylesheet"/>
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+<header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">MiCI</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="active glyphicon glyphicon-home" href="/">Home</a>
+                </li>
+
+                <li>
+                    <a class="glyphicon glyphicon-th" href="/allimages">Images</a>
+                </li>
+
+                <li>
+                    <a class="glyphicon glyphicon-list-alt" href="/contacts">Contact</a>
+                </li>
+
+                <li>
+                    <a  class="glyphicon glyphicon-file" href="/about">About</a>
+                </li>
+                {{if .CurrentUser}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle glyphicon glyphicon-lock" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/article/new">Create Post</a></li>
+                        <li><a href="/user/new">Create User</a></li>
+                        <li><a href="/images/new">Upload Photo</a></li>
+                    </ul>
+                </li>
+                {{end}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown">Auth <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {{if .CurrentUser}}
+                        <li><a href="/account">Profile</a></li>
+                        <li><a href="/sign-out">Logout</a></li>
+                        {{else}}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        {{end}}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    {{if .Flash}}
+    <div class="alert alert-info">
+        {{.Flash}}
+    </div>
+    {{end}}
+    {{if .FlashSuccess}}
+    <div class="alert alert-success">
+        {{.FlashSuccess}}
+    </div>
+    {{end}}
+    {{if .FlashInfo}}
+    <div class="alert alert-info">
+        {{.FlashInfo}}
+    </div>
+    {{end}}
+    {{if .FlashWarning}}
+    <div class="alert alert-warning">
+        {{.FlashWarning}}
+    </div>
+    {{end}}
+    {{if .FlashDanger}}
+    <div class="alert alert-danger">
+        {{.FlashDanger}}
+    </div>
+    {{end}}
+    {{ yield }}
+</div>
+<footer>
+
+    <div class="footer-limiter">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <p class="footer-links">Happy hacking!</p>
+
+            <p>Oleg Tsimbal © 2017</p>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
