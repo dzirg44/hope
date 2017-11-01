@@ -14,9 +14,6 @@ func init() {
         for _, path := range folder {
 			if _, err := os.Stat(path); os.IsNotExist(err) {
 				os.Mkdir(path, 0750)
-				if err != nil {
-					panic(err)
-				}
 			}
 		}
 
