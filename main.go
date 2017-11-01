@@ -10,7 +10,7 @@ import (
 
 
 func init() {
-        folder := []string{"data/images","data/images/preview", "date/images/thumbnail"}
+        folder := []string{"data","data/images","data/images/preview", "date/images/thumbnail"}
         for _, path := range folder {
 			if _, err := os.Stat(path); os.IsNotExist(err) {
 				os.Mkdir(path, 0750)
