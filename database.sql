@@ -28,7 +28,7 @@ CREATE TABLE `users` (
 `user_email` VARCHAR(128) NOT NULL DEFAULT '',
 `user_password` VARCHAR(191) NOT NULL DEFAULT '',
 `user_name` VARCHAR(191) NOT NULL DEFAULT '',
-`user_level` int(11) NOT NULL DEFAULT '',
+`user_level` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

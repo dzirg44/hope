@@ -53,16 +53,19 @@ func NewUser(username, email, password string) (User, []error) {
 	if err != nil {
 		validationError = append(validationError, err)
 	}
-	if existingUser != nil {
+	if existingUser.Username != "" {
 		validationError = append(validationError, errUsernameExists)
 	}
-	existingUser, err = globalUserStore.FindByEmail(email)
+
+	existingMail, err := globalUserStore.FindByEmail(email)
 	if err != nil {
 		validationError = append(validationError, err)
 	}
-	if existingUser != nil {
+
+	if existingMail.Email != "" {
 		validationError = append(validationError, errEmailExists)
 	}
+
 	if validationError != nil {
 		return user, validationError
 	}
