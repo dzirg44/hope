@@ -4,12 +4,18 @@ import (
 	"net/http"
 	"log"
 	"github.com/gorilla/mux"
+	"os"
 )
 
 
 
 func init() {
-
+        folder := []string{"data/images","data/images/preview", "date/images/thumbnail"}
+        for _, path := range folder {
+			if _, err := os.Stat(path); os.IsNotExist(err) {
+				os.Mkdir(path, 0600)
+			}
+		}
 
 	db, err := MysqlDB("gophr:gophr@tcp(192.168.1.66:3306)/gophr")
 	if err != nil {
